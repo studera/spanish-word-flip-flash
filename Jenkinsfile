@@ -72,6 +72,11 @@ pipeline {
             steps {
                 sh 'npx playwright test'
             }
+            post {
+                always {
+                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, icon: '', keepAll: false, reportDir: 'reports-e2e/html/', reportFiles: 'index.html', reportName: 'Playwright HTML report', reportTitles: '', useWrapperFileDirectly: true])
+                }
+            }
         }
     }
 }
