@@ -67,7 +67,7 @@ pipeline {
                 }
             }
             environment {
-                E2E_BASE_URL = 'https://spanish-cards.netlify.app/'
+                E2E_BASE_URL = 'https://spanish-cards.netlify.app/'         // is not deployed in the internet
             }
             steps {
                 sh 'npx playwright test'
